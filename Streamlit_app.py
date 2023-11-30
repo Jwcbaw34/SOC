@@ -99,6 +99,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-"""
-with open('app.py', 'w') as f:
-    f.write(app_code)
