@@ -10,6 +10,10 @@ st.set_page_config(page_title="SOC-Call Centre chatbot", page_icon=":phone:")
 
 openai_api_key = os.environ.get("OPENAI_API_KEY")
 
+# Read the content of the txt file
+with open('faq_content.txt', 'r') as file:
+    faq_content = file.read()
+
 template = """
 Use the following context (delimited by <ctx></ctx>) and the chat history (delimited by <hs></hs>) to answer the question: 
 ------
@@ -81,7 +85,7 @@ def main():
 
     # Initialize FAQ content
     if "faq_content" not in st.session_state:
-        st.session_state.faq_content = "xyz"
+        st.session_state.faq_content = faq_content
 
   st.set_page_config(page_title="SOC-Call Ctr Chatbot :phone:", page_icon=":phone:")
     st.write(css, unsafe_allow_html=True)
